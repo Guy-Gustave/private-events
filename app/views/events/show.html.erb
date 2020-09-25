@@ -1,6 +1,10 @@
 <h2><%= @event.description%></h2>
 
 <%= @event.event_date %></br>
+<%= @event.creator_id %></br>
+
    
+  <%# <%= button_to 'Register Now', register_event_path(@event.id) %>
+
   <%= link_to "Back to Events", events_path %> <br>
   <%= link_to "New Event", new_event_path, class: "new_event" %>

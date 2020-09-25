@@ -26,13 +26,13 @@ class EventsController < ApplicationController
     end
   end
 
-  # def register
-  #   @attendance = Attendance.create(event_id: params[:id], user_id: session[:user_id])
-  #   if @attendance.save
-  #     flash[:notice] = 'welcome to the event, Registered sucessfully'
-  #     redirect_to event_path
-  #   end
-  # end
+  def register
+    @attendance = Attendance.create(event_id: params[:id], user_id: session[:user_id])
+    if @attendance.save
+      flash[:notice] = 'welcome to the event, Registered sucessfully'
+      redirect_to event_path
+    end
+  end
  
 
   # def update
