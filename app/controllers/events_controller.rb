@@ -27,10 +27,13 @@ class EventsController < ApplicationController
   end
 
   def register
-    @attendance = AttendanceEvent.create(event_id: params[:id], user_id: session[:user_id])
+    @attendance = AttendanceEvent.create(attended_event_id: params[:id], attendee_id: session[:user_id])
     if @attendance.save
       flash[:notice] = 'welcome to the event, Registered sucessfully'
-      redirect_to event_path
+      redirect_to event_path(params[:id])
+    else
+
+      flash[:error] = "Something went wrong"
     end
   end
  

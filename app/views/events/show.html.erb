@@ -1,13 +1,12 @@
-
-  <h1>Event Attendee</h2>
+<h2>@event.description</h2>
    <div>
-      <% @event.attendees.each do |attendee|%>
-         <ul>
-            <li> <%= attendee.name  %> </li>
-         </ul>
-      <% end %>
+   <% @event.attendees.each do |attendee|%>
+      <li><%= attendee.name %> </li>
+   <% end %>
+
    </div>
    
-  <%# <%= button_to 'Register Now', register_event_path(@event.id) %> %>
+   <%= button_to 'Register Now', register_path(:id => @event.id ) %>
+  
   <%= link_to "Back to Events", events_path %> <br>
   <%= link_to "New Event", new_event_path, class: "new_event" %>
