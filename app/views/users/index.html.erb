@@ -1,1 +1,9 @@
-<h1>All users</h1>
+<h1>Index</h1>
+<div>
+    <% @users.each do |user|%>
+        <ul>
+            <li> <%= link_to user.name , user_path(user.id) %> </li>
+        </ul>
+    <% end %>
+</div>
+<%= link_to "New Event", new_event_path, class: "new_event" %>
