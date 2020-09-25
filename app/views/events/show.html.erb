@@ -1,10 +1,13 @@
-<h2><%= @event.description%></h2>
 
-<%= @event.event_date %></br>
-<%= @event.creator_id %></br>
-
+  <h1>Event Attendee</h2>
+   <div>
+      <% @event.attendees.each do |attendee|%>
+         <ul>
+            <li> <%= attendee.name  %> </li>
+         </ul>
+      <% end %>
+   </div>
    
-  <%# <%= button_to 'Register Now', register_event_path(@event.id) %>
-
+  <%# <%= button_to 'Register Now', register_event_path(@event.id) %> %>
   <%= link_to "Back to Events", events_path %> <br>
   <%= link_to "New Event", new_event_path, class: "new_event" %>
