@@ -1,4 +1,4 @@
-<h2>@event.description</h2>
+<h2><%= @event.description%></h2>
    <div>
    <% @event.attendees.each do |attendee|%>
       <li><%= attendee.name %> </li>

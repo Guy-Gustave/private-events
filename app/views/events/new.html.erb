@@ -1,14 +1,16 @@
 <h2>create event</h1>
 <%= form_for(@event, html: {multipart: true}) do |f| %>
 
+
+  
   <p>
       <%= f.label :event_date  %><br />
       <%= f.date_field :event_date %><br>
-    </p>
+  </p>
   <p>
-      <%= f.label :description %><br />
-      <%= f.text_area :description %>
-    </p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
   <%= f.submit "Create Event" %>
     </p>
  
