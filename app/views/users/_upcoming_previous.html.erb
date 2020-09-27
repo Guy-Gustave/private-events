@@ -1,21 +1,24 @@
-<h3>All Attended Event </h3>
 
-    <h3>upcoming events</h3>
+  <div class= "content">
+    <h2 class= "text-dark   ">All Attended Event </h2>
 
-    <% @user.attended_events.upcoming.each do |event| %>
-      <ul>
-         <li>Creator: <%= event.creator.name %> <br/>
-               <p>Date: <%= event.event_date %></p> 
-               <p>Description: <%= event.description %></p> 
-         </li><br/><br/>     
-      </ul>
-    <% end %>
-    <h3>previous events</h3>
-    <% @user.attended_events.past.each do |event| %>
-      <ul>
-         <li>Creator: <%= event.creator.name %> <br/>
-               <p>Date: <%= event.event_date %></p> 
-               <p>Description: <%= event.description %></p> 
-         </li><br/><br/>     
-      </ul>
-    <% end %>
+        <h3 >upcomings events</h3>
+
+        <% @user.attended_events.upcoming.each do |event| %>
+          <ul>
+            <li>Creator: <%= event.creator.name %> <br/>
+                  <p>Date: <%= event.event_date %></p> 
+                  <p>Description: <%= event.description %></p> 
+            </li><br/><br/>     
+          </ul>
+        <% end %>
+        <h3>previous events</h3>
+        <% @user.attended_events.past.each do |event| %>
+          <ul>
+            <li>Creator: <%= event.creator.name %> <br/>
+                  <p>Date: <%= event.event_date %></p> 
+                  <p>Description: <%= event.description %></p> 
+            </li><br/><br/>     
+          </ul>
+        <% end %>
+    </div>

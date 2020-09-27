@@ -1,20 +1,23 @@
-<h2>create event</h1>
-<%= form_for(@event, html: {multipart: true}) do |f| %>
+<div class = "cont  ">
+  <div class="main d-flex  align-items-center flex-column ">
+    <h2 class= "text-primary event">create event</h1>
+    <%= form_for(@event, html: {multipart: true}) do |f| %>
+      <div class= "ml-4 mt-3">
 
-
+      <p>
+        <%= f.label :event_date  %><br />
+        <%= f.date_field :event_date %><br>
+      </p>
+      <p>
+        <%= f.label :description %><br />
+        <%= f.text_area :description %>
+      </p>
+        <%= f.submit "Create Event" %>
+      </p>
+      </div>
   
-  <p>
-      <%= f.label :event_date  %><br />
-      <%= f.date_field :event_date %><br>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
-  <%= f.submit "Create Event" %>
-    </p>
- 
-  <% end %>
-  <%= link_to "Back to Events", events_path %> <br>
-
-  
+    <% end %>
+    <%= link_to "Back to Events", events_path %> <br>
+  </div>
+</div>
+    
