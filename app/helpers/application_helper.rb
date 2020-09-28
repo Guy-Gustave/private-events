@@ -11,14 +11,13 @@ module ApplicationHelper
 
     out.html_safe
   end
-def event_show
-  out = ''
-  if logged_in?
-    out << link_to('Home', root_path, class: 'nav-link')
-    out << link_to('Create Event', new_event_path, class: 'nav-link mr-auto ')
-    
-  end
-  out.html_safe
-end
 
+  def event_show
+    out = ''
+    if logged_in?
+      out << link_to('Home', root_path, class: 'nav-link')
+      out << link_to('Create Event', new_event_path, class: 'nav-link mr-auto ')
+    end
+    out.html_safe
+  end
 end
