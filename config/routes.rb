@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   resources :events
   root 'users#index'
   get '/login' => 'sessions#new'
-  post '/login' => 'sessions#create'
+  post '/logup' => 'sessions#create'
   post '/register' => 'events#register'
+  delete '/logout' => 'sessions#destroy'
 end
 
