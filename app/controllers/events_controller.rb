@@ -1,7 +1,6 @@
 class EventsController < ApplicationController
-
   def index
-    @events= Event.all
+    @events = Event.all
   end
 
   def show
@@ -11,17 +10,15 @@ class EventsController < ApplicationController
   def new
     @event = Event.new
   end
-  
-  def  create
-    
+
+  def create
     @event = current_user.events.build(event_params)
     @event.creator_id = session[:user_id]
     if @event.save
-      flash[:success] = "Event successfully created"
+      flash[:success] = 'Event successfully created'
       redirect_to event_path(@event)
     else
-
-      flash[:error] = "Something went wrong"
+      flash[:error] = 'Something went wrong'
       render 'new'
     end
   end
@@ -33,22 +30,10 @@ class EventsController < ApplicationController
       redirect_to event_path(params[:id])
     else
 
-      flash[:error] = "Something went wrong"
+      flash[:error] = 'Something went wrong'
     end
   end
- 
 
-  # def update
-  #   @ = .find(params[:id])
-  # end
-
-  # def edit
-  #   @ = .find(params[:id])
-  # end
-
-  # def destroy
-  #    = .find(params[:id])
-  # end
   private
 
   def event_params

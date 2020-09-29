@@ -1,8 +1,3 @@
-<h1>users</h1>
-    <% @user.attended_events.each do |event| %> 
-    <ul>
-      <li><%= event.description %></li>
-    </ul>
-    <% end %>
-    <%= link_to "Back to Events", events_path %> <br>
 
+
+<%= render 'upcoming_previous' %>

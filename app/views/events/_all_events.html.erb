@@ -1,0 +1,23 @@
+<div class = "container  ">
+    <h1 >All Events </h1>
+  
+    <h3>upcomings Events</h3>
+    <% @events.upcoming.each do |event| %>
+        <ul>  
+        <li> creator:<%= event.creator.name  %> </li>
+        <li>description:<%=event.description %> </li>
+        <li>Date:<%= event.event_date %> </li>
+        </ul>
+    <% end %>
+
+    <h3>previous Events</h3>
+    <% @events.past.each do |event| %>
+        <ul>  
+        <li> creator:<%= event.creator.name  %> </li>
+        <li>description:<%=event.description %> </li>
+        <li>Date:<%= event.event_date %> </li>
+        </ul>
+    <% end %>
+
+<%= link_to "New Event", new_event_path, class: "new_event" %>
+</div>
